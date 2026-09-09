@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom & Cash Craft — Premium Buket Kriya & Uang Eksklusif</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        /* Warna Utama Sesuai Format Proposal Anda (Hijau Gelap #1E7153) */
+        :root {
+            --primary-color: #1E7153;
+            --secondary-color: #16543D;
+            --text-dark: #333333;
+            --bg-light: #F9F9F9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Header / Navigasi */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30, 113, 83, 0.08), rgba(30, 113, 83, 0.03));
+            padding: 140px 20px 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: #666;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s;
+            box-shadow: 0 4px 6px rgba(30, 113, 83, 0.2);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Keunggulan / Why Us */
+        .features {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Katalog Produk */
+        .catalog-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            position: relative;
+            color: var(--primary-color);
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img-placeholder {
+            height: 250px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 4rem;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-tag {
+            background-color: rgba(30, 113, 83, 0.1);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .product-info p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            height: 70px;
+            overflow: hidden;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        /* Form Konsultasi / Pesan */
+        .order-section {
+            background-color: white;
+            padding: 60px 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .btn-block {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #bbb;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigasi -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">BLOOM & CASH CRAFT</a>
+            <div class="nav-links">
+                <a href="#katalog">Koleksi</a>
+                <a href="#tentang">Keunggulan</a>
+                <a href="#pesan">Konsultasi Order</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Abadikan Momen, Berikan Nilai Manfaat Finansial</h1>
+        <p>Perpaduan estetika seni kriya bunga kain satin buatan tangan yang tahan selamanya dengan utilitas ekonomi nyata dari buket uang kertas proteksi tinggi.</p>
+        <a href="#pesan" class="btn-primary">Mulai Konsultasi Gratis H-3</a>
+    </section>
+
+    <!-- Keunggulan / Why Us -->
+    <section class="features" id="tentang">
+        <div class="feature-card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Anti-Damage System</h3>
+            <p>Setiap lembar uang dilapisi plastik OPP pelindung mandiri tanpa lem tembak atau steples. Dijamin 100% aman dan utuh untuk dipakai kembali.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <h3>Kriya Tangan Eksklusif</h3>
+            <p>Kelopak bunga kami dipotong dan dibentuk satu per satu menggunakan teknik pembakaran pinggiran kain (singeing technique) untuk hasil natural.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <h3>Nilai Kenangan Abadi</h3>
+            <p>Menggunakan Premium Korean Cellophane dan kain premium, membuat buket tidak akan layu dalam hitungan hari seperti bunga asli.</p>
+        </div>
+    </section>
+
+    <!-- Katalog Produk -->
+    <section class="catalog-section" id="katalog">
+        <h2 class="section-title">Koleksi Mahakarya Utama</h2>
+        <div class="catalog-grid">
+            
+            <!-- Produk 1 -->
+            <div class="product-card">
+                <div class="product-img-placeholder">
+                    <i class="fa-solid fa-rose">🌹</i>
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Kategori Pacar / Pasangan</span>
+                    <h3>Romantic Sweetheart Bouquet</h3>
+                    <p>Kombinasi keindahan kriya bunga kain satin lembut/organza dengan aksen hiasan lampu LED mikro, pita mutiara, dan kartu ucapan kustom.</p>
+                    <div class="product-meta">
+                        <span class="price">Jasa Mulai Rp 75.000</span>
