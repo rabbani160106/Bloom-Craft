@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloom & Cash Craft — Premium Buket Kriya & Uang Eksklusif</title>
     <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://googleapis.com" rel="stylesheet">
-    <link rel="stylesheet" href="https://cloudflare.com">
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Warna Utama Sesuai Format Proposal Anda (Hijau Gelap #1E7153) */
         :root {
@@ -336,3 +336,93 @@
 
             <!-- Produk Baru (Produk 2) -->
             <div class="product-card">
+                <img src="buket_uang_reguler.jpg" alt="Buket Uang Reguler">
+                <div class="product-info">
+                    <span class="product-tag">Kategori Populer / Kasual</span>
+                    <h3>Standard Money Bouquet</h3>
+                    <p>Buket uang kertas asli pilihan praktis untuk hadiah ulang tahun atau kelulusan dengan rangkaian kriya bunga pelengkap yang menawan.</p>
+                    <div class="product-meta">
+                        <span class="price">Jasa Mulai Rp 150.000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="product-card">
+                <img src="wedding.jpg" alt="The Wedding Cash Bloom">
+                <div class="product-info">
+                    <span class="product-tag">Kategori Pernikahan / Formal</span>
+                    <h3>The Wedding Cash Bloom</h3>
+                    <p>Buket premium skala besar dengan integrasi lembaran uang kertas asli yang disusun bertingkat megah menyerupai menara kemakmuran pelaminan.</p>
+                    <div class="product-meta">
+                        <span class="price">Jasa Mulai Rp 350.000</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Form Konsultasi Langsung Ke WhatsApp -->
+    <section class="order-section" id="pesan">
+        <h2 class="section-title">Formulir Pesanan & Konsultasi</h2>
+        <div class="form-container">
+            <form id="whatsappForm">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap Pemesan</label>
+                    <input type="text" id="nama" placeholder="Contoh: Muhammad Filah" required>
+                </div>
+                <div class="form-group">
+                    <label for="produk">Pilihan Jenis Buket</label>
+                    <select id="produk" required>
+                        <option value="">-- Pilih Model Buket --</option>
+                        <option value="Romantic Sweetheart Bouquet">Romantic Sweetheart Bouquet</option>
+                        <option value="Standard Money Bouquet (Mulai 150rb)">Standard Money Bouquet (Mulai Rp 150.000)</option>
+                        <option value="The Wedding Cash Bloom">The Wedding Cash Bloom</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nominal">Nominal Transaksi Isi Uang (Jika ada)</label>
+                    <input type="text" id="nominal" placeholder="Contoh: Rp 500.000 (Pecahan Lembar 50 Ribu)">
+                </div>
+                <div class="form-group">
+                    <label for="catatan">Catatan Kustomisasi (Tema Warna / Tulisan Kartu Ucapan)</label>
+                    <textarea id="catatan" rows="3" placeholder="Contoh: Tema kain pembungkus warna merah marun ala Korea, kartu ucapan ditulis 'Happy Anniversary ke-2 ya!'"></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-block">
+                    <i class="fa-brands fa-whatsapp"></i> Kirim Formulir ke WhatsApp Admin
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Bloom & Cash Craft. All Rights Reserved.</p>
+        <p>Studio: Jl. Mustikajaya, Bekasi, Jawa Barat | Authentic • Premium • Indonesian Handmade</p>
+    </footer>
+
+    <!-- Script Integrasi Otomatis Ke WhatsApp -->
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // CATATAN: Ganti nomor di bawah ini dengan nomor WhatsApp aktif Anda (awali dengan kode negara 62)
+            const nomorAdmin = "6285817067120"; 
+            
+            const nama = document.getElementById('nama').value;
+            const produk = document.getElementById('produk').value;
+            const nominal = document.getElementById('nominal').value || 'Tidak Ada (Hanya Paket Bunga Kriya)';
+            const catatan = document.getElementById('catatan').value || '-';
+            
+            const teksPesan = `Halo Admin Bloom & Cash Craft,%0A%0ASaya tertarik dan ingin melakukan konsultasi pemesanan buket kriya H-3 dengan rincian data berikut:%0A%0A` +
+                              `• *Nama Pemesan:* ${nama}%0A` +
+                              `• *Pilihan Model:* ${produk}%0A` +
+                              `• *Nominal Isi Uang:* ${nominal}%0A` +
+                              `• *Kustomisasi & Ucapan:* ${catatan}%0A%0AMohon info rincian total tagihan dan instruksi pembayaran penuh di awal (Full Advance Payment). Terima kasih!`;
+            
+            window.open(`https://api.whatsapp.com/send?phone=${nomorAdmin}&text=${teksPesan}`, '_blank');
+        });
+    </script>
+</body>
+</html>
